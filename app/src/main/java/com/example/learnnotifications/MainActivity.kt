@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         )
 
         button.setOnClickListener {
-            notificationManager?.sendNotification("Successfull", this)
+            notificationManager?.sendNotification("Successful", this)
         }
     }
 
@@ -38,7 +38,9 @@ class MainActivity : AppCompatActivity() {
                 channelId,
                 channelName,
                 NotificationManager.IMPORTANCE_HIGH
-            )
+            ).apply {
+                setShowBadge(false)
+            }
 
             val notificationManager = this.getSystemService(
                 NotificationManager::class.java
